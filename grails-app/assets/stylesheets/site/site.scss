@@ -1,0 +1,26 @@
+/*
+ *= require fonts
+ */
+
+html {
+    height: 100%
+}
+
+body {
+    background-color: #334;
+    color: white;
+    font-family: manaspc;
+    min-height: 100%
+}
+
+.rootPane {
+    position: relative;
+    background-color: black;
+    max-width: 800px; 
+    margin: auto;
+    height: 600px;
+    border: 10px  gray;
+    border-style: ridge;
+    border-radius: 15px;
+    border-block-end-style: solid;
+}
