@@ -1,4 +1,5 @@
 @font-face {
     font-family: "manaspc";
-    src: url("manaspc.ttf")
+    src: url("manaspc.ttf") format('ttf'),
+        url("manaspc.woff") format('woff')
 }
