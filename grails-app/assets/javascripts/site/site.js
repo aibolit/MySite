@@ -1,6 +1,49 @@
 //= require jquery-3.2.1
 
 
+function showDialog(text, cb) {
+    var modal = $("#modal");
+    var modalRoot = $("#modal-root");
+    modal.css("visibility", "visible");
+    modalRoot.empty();
+
+    var pane = $("<div style='position: relative; max-width: 700px; padding: 20px' />");
+    var label = $("<label class='modal-label' />");
+    pane.append(label);
+    var close = $("<input type='button' value='close' class='modal-button-close'  style='left: 50%; transform: translate(-50%); position: relative; display: block' />");
+    close.click(function () {
+        pane.remove();
+        modal.css("visibility", "hidden");
+        if (cb) cb();
+    });
+    pane.append(close);
+
+    label.text(text);
+    modalRoot.append(pane);
+}
+
+function showPopup(page, cb) {
+    var modal = $("#modal");
+    var modalRoot = $("#modal-root");
+    modal.css("visibility", "visible");
+    modalRoot.empty();
+
+    var pane = $("<div style='position: relative; max-width: 700px; padding: 20px' />");
+
+    pane.load(page);
+
+    var close = $("<input type='button' value='close' class='modal-button-close'  style='left: 50%; transform: translate(-50%); position: relative; display: block' />");
+
+    close.click(function () {
+        pane.remove();
+        modal.css("visibility", "hidden");
+        if (cb) cb();
+    });
+    pane.append(close);
+
+    modalRoot.append(pane);
+}
+
 var cText = {
     '.titleLabel': {
         initial: 2000,
@@ -9,6 +52,20 @@ var cText = {
             { text: "Welcome to " },
             { text: "Aleks Tamarkin", style: { color: "orange" } },
             { text: "'s portfolio." }
+        ]
+    },
+    '.contactLabel': {
+        initial: 0,
+        speed: 10,
+        text: [
+            { text: "Email: " },
+            { text: "aibolit@live.com", href: "mailto:aibolit@live.com" },
+            { br: true },
+            { text: "Github: " },
+            { text: "https://github.com/aibolit", href: "https://github.com/aibolit" },
+            { br: true },
+            { text: "LinkedIn: " },
+            { text: "https://linkedin.com/in/aibolit", href: "https://linkedin.com/in/aibolit" }
         ]
     },
     '.descLabel': {
@@ -22,12 +79,7 @@ var cText = {
             aliquam eros ac libero mollis, ac fringilla nisi interdum. Vestibulum tincidunt porta justo rhoncus malesuada. \
             Aenean eu ligula arcu. In a blandit tellus. Aliquam nisl ante, volutpat at imperdiet eu, iaculis et eros. \
             In rutrum risus ut nunc luctus interdum. Pellentesque quis ante ut metus tincidunt vehicula et luctus tellus. \
-            Nulla porttitor tincidunt dui non iaculis. Proin rhoncus varius mauris, et fermentum lorem tempor ut. Donec \
-            in sapien nec arcu suscipit tristique. Morbi efficitur congue efficitur. Cras mauris felis, aliquam in lorem \
-            quis, pellentesque dignissim magna. Donec euismod, diam quis interdum sollicitudin, dolor lectus gravida \
-            nunc, quis scelerisque arcu enim in arcu. Pellentesque varius lacinia mauris, eu condimentum lacus. Aliquam \
-            bibendum ligula in erat tempus ultrices. Mauris porttitor eros ut consequat bibendum. Orci varius natoque \
-            penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent porta porta lectus in blandit.'}
+            Nulla porttitor tincidunt dui non iaculis. Proin rhoncus varius mauris, et fermentum lorem tempor ut. '}
         ]
     }
 }
@@ -86,16 +138,17 @@ function cpuText(id, cb) {
                 var c = 0;
                 var quit = true;
                 dat.text.forEach(function (ta) {
-                    if (c < tVal) {
+                    if (ta.br) {
+                        widget.append($("<br/>"));
+                    } else if (c < tVal) {
                         var left = tVal - c;
-                        var label = blank = $("<label />");
+                        var label = ta.href ? $("<a target='_blank' />") : $("<label />");
+                        if (ta.href) label.attr("href", ta.href);
                         if (ta.style) label.css(ta.style);
                         widget.append(label);
                         if (left >= ta.text.length) {
                             label.text(ta.text);
                             c += ta.text.length;
-
-                            console.log(ta.text);
                         } else {
                             label.text(ta.text.substr(0, left));
                             c += left;
@@ -128,14 +181,33 @@ function cpuText(id, cb) {
 
 }
 
-
+var projects = [
+    { page: asset_url("this.html") }
+]
 
 $(document).ready(function () {
-
     console.log("ypp");
 
 
-    cpuText('.titleLabel', function next() {
-        cpuText('.descLabel');
+    $("#modal-shade").click(function () {
+        $("#modal").css("visibility", "hidden");
+        $("#modal-root").empty();
+
+    });
+
+    cpuText('.titleLabel', function () {
+        cpuText(".contactLabel", function () {
+            cpuText('.descLabel', function () {
+                projects.forEach(function (project) {
+                    var pDiv = $("<div class='projectDiv' />");
+                    pDiv.attr("root", project.root);
+
+                    $(".projectsDiv").append(pDiv);
+                    pDiv.click(function () {
+                        showPopup(project.page);
+                    });
+                });
+            });
+        });
     });
 });

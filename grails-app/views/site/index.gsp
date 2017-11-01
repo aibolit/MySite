@@ -17,16 +17,12 @@
 
 <body>
     <div class="rootPane">
-        <div class="titleLabel"></div>
-        <div class="descLabel"></div>
-        <div class="projectsDiv">
-            <div class="projectDiv" project="thisSite"></div>
-            <div class="projectDiv"></div>
-            <div class="projectDiv"></div>
-            <div class="projectDiv"></div>
-            <div class="projectDiv"></div>
-            <div class="projectDiv"></div>
-            <div class="projectDiv"></div>
+        <div class="contentPane">
+            <div class="myPhoto"></div>
+            <div class="titleLabel"></div>
+            <div class="contactLabel"></div>
+            <div class="descLabel"></div>
+            <div class="projectsDiv"></div>
         </div>
     </div>
     <div id="modal" style="visibility: hidden; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 100">
