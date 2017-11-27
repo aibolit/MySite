@@ -49,23 +49,23 @@ var cText = {
         initial: 2000,
         speed: 35,
         text: [
-            { text: "Welcome to " },
-            { text: "Aleks Tamarkin", style: { color: "orange" } },
-            { text: "'s portfolio." }
+            {text: "Welcome to "},
+            {text: "Aleks Tamarkin", style: {color: "orange"}},
+            {text: "'s portfolio."}
         ]
     },
     '.contactLabel': {
         initial: 0,
         speed: 10,
         text: [
-            { text: "Email: " },
-            { text: "aibolit@live.com", href: "mailto:aibolit@live.com" },
-            { br: true },
-            { text: "Github: " },
-            { text: "https://github.com/aibolit", href: "https://github.com/aibolit" },
-            { br: true },
-            { text: "LinkedIn: " },
-            { text: "https://linkedin.com/in/aibolit", href: "https://linkedin.com/in/aibolit" }
+            {text: "Email: "},
+            {text: "aibolit@live.com", href: "mailto:aibolit@live.com"},
+            {br: true},
+            {text: "Github: "},
+            {text: "https://github.com/aibolit", href: "https://github.com/aibolit"},
+            {br: true},
+            {text: "LinkedIn: "},
+            {text: "https://linkedin.com/in/aibolit", href: "https://linkedin.com/in/aibolit"}
         ]
     },
     '.descLabel': {
@@ -87,7 +87,7 @@ var cText = {
 function cpuText(id, cb) {
     var dat = cText[id];
     var widget = $(id);
-    var chars = dat.text.reduce(function (a, b) { return a + b.text }, "");
+    var chars = dat.text.reduce(function (a, b) {return a + b.text}, "");
     var blank = $("<label />");
     blank.text(chars);
     blank.css("color", "rgba(0,0,0,0)");
@@ -180,12 +180,14 @@ function cpuText(id, cb) {
 }
 
 var projects = [
-    { page: "assets/this.html" },
-    { page: "assets/battlecode.html" },
-    { page: "assets/exchange.html" },
-    { page: "assets/base.html" },
-    { page: "assets/boss.html" },
-    { page: "assets/puzzlehunt.html" }
+    {page: "assets/battlecode.html"},
+    {page: "assets/exchange.html"},
+    {page: "assets/base.html"},
+    {page: "assets/clip.html"},
+    {page: "assets/boss.html"},
+    {page: "assets/puzzlehunt.html"},
+    {page: "assets/peri.html"},
+    {page: "assets/this.html"},
 ]
 
 $(document).ready(function () {
