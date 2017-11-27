@@ -73,13 +73,11 @@ var cText = {
         speed: 8,
         text: [
             {
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed mauris non libero aliquam bibendum vestibulum \
-            nec dui. In fringilla sagittis mi, eu mollis nibh maximus id. Cras id diam aliquet, fermentum orci eu, venenatis \
-            neque. Nulla commodo consectetur ante ac tempor. Maecenas sit amet pulvinar lacus. Donec nec orci sem. Proin \
-            aliquam eros ac libero mollis, ac fringilla nisi interdum. Vestibulum tincidunt porta justo rhoncus malesuada. \
-            Aenean eu ligula arcu. In a blandit tellus. Aliquam nisl ante, volutpat at imperdiet eu, iaculis et eros. \
-            In rutrum risus ut nunc luctus interdum. Pellentesque quis ante ut metus tincidunt vehicula et luctus tellus. \
-            Nulla porttitor tincidunt dui non iaculis. Proin rhoncus varius mauris, et fermentum lorem tempor ut. '}
+                text: 'I started making Starcraft mods when I was in middle school. \
+                Since then, my passion for coding has only grown and much of what I build is still somehow related to gaming, although most of it today is about teaching through making games. \
+                what I love about code is the problem solving. It\'s doing the research to figure out what pieces you need, and then spending the time piecing them together like a puzzle. \
+                 '
+            }
         ]
     }
 }
@@ -182,7 +180,9 @@ function cpuText(id, cb) {
 }
 
 var projects = [
-    { page: asset_url("this.html") }
+    { page: asset_url("this.html") },
+    { page: asset_url("battlecode.html") },
+    { page: asset_url("exchange.html") }
 ]
 
 $(document).ready(function () {

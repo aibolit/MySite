@@ -76,8 +76,12 @@ a {
     height: 250px;
     float: right;
     overflow: hidden;
-    background-color: magenta;
+    background-color: black;
     margin: 5px;
+
+    img {
+        height: 100%;
+    }
 }
 
 #modal-shade {
@@ -103,6 +107,7 @@ a {
     z-index: 10000;
     border: 10px solid gray;
     border-radius: 15px;
+    font-size: 14px;
 }
 
 #modal {

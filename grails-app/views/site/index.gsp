@@ -18,7 +18,8 @@
 <body>
     <div class="rootPane">
         <div class="contentPane">
-            <div class="myPhoto"></div>
+            <div class="myPhoto">
+                <asset:image src="mypic.jpg" /> </div>
             <div class="titleLabel"></div>
             <div class="contactLabel"></div>
             <div class="descLabel"></div>
