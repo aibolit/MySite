@@ -180,9 +180,9 @@ function cpuText(id, cb) {
 }
 
 var projects = [
-    { page: asset_url("this.html") },
-    { page: asset_url("battlecode.html") },
-    { page: asset_url("exchange.html") }
+    { page: "assets/this.html" },
+    { page: "assets/battlecode.html" },
+    { page: "assets/exchange.html" }
 ]
 
 $(document).ready(function () {
