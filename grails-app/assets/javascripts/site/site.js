@@ -182,7 +182,10 @@ function cpuText(id, cb) {
 var projects = [
     { page: "assets/this.html" },
     { page: "assets/battlecode.html" },
-    { page: "assets/exchange.html" }
+    { page: "assets/exchange.html" },
+    { page: "assets/base.html" },
+    { page: "assets/boss.html" },
+    { page: "assets/puzzlehunt.html" }
 ]
 
 $(document).ready(function () {
