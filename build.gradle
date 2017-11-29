@@ -70,4 +70,5 @@ bootRun {
 assets {
     minifyJs = true
     minifyCss = true
+    enableSourceMaps = false
 }
