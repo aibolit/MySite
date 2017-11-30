@@ -67,10 +67,14 @@ var cText = {
         speed: 8,
         text: [
             {
-                text: 'I started making Starcraft mods when I was in middle school. \
-                Since then, my passion for coding has only grown and much of what I build is still somehow related to gaming, although most of it today is about teaching through making games. \
-                what I love about code is the problem solving. It\'s doing the research to figure out what pieces you need, and then spending the time piecing them together like a puzzle. \
-                 '
+                text: 'I started making Starcraft mods when I was in middle school \
+                and since then, my passion for coding and technology has continued \
+                to grow. Much of what I build is still related to gaming, however, \
+                I now focus on using games as tools for learining. What I love most \
+                about code is the problem solving; doing the \
+                research, figuring out what pieces you need and then spending the \
+                time putting them together like a puzzle. \
+                Check out the projects below to see some of my creations.'
             }
         ]
     }

@@ -24,7 +24,7 @@ a {
     background-color: black;
     max-width: 800px; 
     margin: auto;
-    height: 600px;
+    height: 620px;
     border: 10px solid gray;
     border-radius: 15px;
     padding: 20px;
@@ -73,7 +73,7 @@ a {
 
     &::after {
         content: attr(flavorText);
-        font-size: 22px;
+        font-size: 20px;
         position: relative;
         z-index: 1;
         white-space: pre-wrap;
@@ -88,7 +88,6 @@ a {
     }
 
     &:hover {
-        color:orange;
         &::after {
             color: orange;
         }
