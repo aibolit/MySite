@@ -69,6 +69,7 @@ a {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    display: table;
 
     &::after {
         content: attr(flavorText);
@@ -77,7 +78,8 @@ a {
         z-index: 1;
         white-space: pre-wrap;
         text-align: center;
-        display: flow-root;
+        display: table-cell;
+        vertical-align: middle;
         text-shadow:
             -1px -1px 0 #000,
             1px -1px 0 #000,
