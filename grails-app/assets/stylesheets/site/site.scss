@@ -65,6 +65,33 @@ a {
     margin: 12px 16px;
     background-color: white;
     cursor: pointer;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    &::after {
+        content: attr(flavorText);
+        font-size: 22px;
+        position: relative;
+        z-index: 1;
+        white-space: pre-wrap;
+        text-align: center;
+        display: flow-root;
+        text-shadow:
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
+    }
+
+    &:hover {
+        color:orange;
+        &::after {
+            color: orange;
+        }
+    }
+
 }
 
 .layerDiv {
